@@ -9,15 +9,16 @@ package com.uvg.main;
  */
 public class TreeNode<K, V> {
 
-	private V value;
-	private K id;
+	private V esp;
+	private K ext;
+	private Association<K, V> associate = new Association<K, V>(ext, esp);
 	private TreeNode<K, V> left;
 	private TreeNode<K, V> right;
 	private TreeNode<K, V> parent;
 	
 	public TreeNode(K id, V value) {
-		setId(id);
-		setValue(value);
+		associate.setEsp(value);
+		associate.setExt(id);
 		setLeft(null);
 		setRight(null);
 		setParent(null);
@@ -27,25 +28,25 @@ public class TreeNode<K, V> {
 	 * @return the value
 	 */
 	public V getValue() {
-		return value;
+		return associate.getEsp();
 	}
 	/**
 	 * @param value the value to set
 	 */
 	public void setValue(V value) {
-		this.value = value;
+		associate.setEsp(value);
 	}
 	/**
 	 * @return the id
 	 */
 	public K getId() {
-		return id;
+		return associate.getExt();
 	}
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(K id) {
-		this.id = id;
+		associate.setExt(id);
 	}
 	/**
 	 * @return the left

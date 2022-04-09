@@ -21,7 +21,8 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
 		root = null;
 		count = 0;
 	}
-	
+
+
 
 	@Override
 	public void insert(K id, V value) {
